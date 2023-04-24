@@ -1,0 +1,32 @@
+<div class="container" id="main-container">
+
+    <button  class="btn btn-info" routerLink="/ajouteremployee" >Ajouter Employee</button>
+  
+         <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">FullName</th>
+                <th scope="col">Age</th>
+                <th scope="col">Email</th>
+                <th scope="col">departement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let emp of employees" class="col-md-6 col-xl-5">
+                <td>{{emp.id}}</td>
+                <td>{{emp.fullName}}</td>
+                <td>{{emp.age}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.departementdto.name}}</td> 
+                <td style="background-color:beige"> 
+  
+                  <div class="btn-group btn-group-sm">
+                    <a (click)="Modiferemployee(emp.id)" class="btn btn-warning"><i style="color:white" class="bi bi-0-circle"></i></a>
+                    <a (click)="deleteData(emp.id)" class="btn btn-danger"><i style="color:white" class="bi bi-0-circle"></i></a>
+  
+                    <!--<a (click)="Deletedepartement(dep.id)" class="btn btn-danger"><i class="fas fa-trash"></i></a>!-->
+                  </div></td>
+              </tr></tbody></table></div>
+  
+  

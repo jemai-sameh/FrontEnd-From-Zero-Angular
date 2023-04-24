@@ -1,0 +1,26 @@
+<div class="container" id="main-container">
+
+  <button  class="btn btn-info" routerLink="ajouterDepartement" >Ajouter departement</button>
+
+       <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">nom</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let dep of departements" class="col-md-6 col-xl-5">
+              <td>{{dep.id}}</td>
+              <td>{{dep.name}}</td>  
+              <td style="background-color:beige"> 
+
+                <div class="btn-group btn-group-sm">
+                  <a (click)="Modiferdepartement(dep.id)" class="btn btn-warning"><i style="color:white" class="bi bi-0-circle"></i></a>
+                  <a (click)="deleteData(dep.id)" class="btn btn-danger"><i style="color:white" class="bi bi-0-circle"></i></a>
+
+                  <!--<a (click)="Deletedepartement(dep.id)" class="btn btn-danger"><i class="fas fa-trash"></i></a>!-->
+                </div></td>
+            </tr></tbody></table></div>
+

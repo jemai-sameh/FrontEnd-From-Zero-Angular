@@ -1,0 +1,68 @@
+<div class="container " >
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+        <div class="col-xl-6">
+            <br><br><br><br>
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <div class="p-5">
+                                <div class="text-center">
+                                  
+                                    <h1 class="h1 text-gray-900 mb-4">Ajout Mission</h1>
+                                </div>
+                                <div class="alert alert-danger" *ngIf="errormessage">
+                                    {{errormessage}}
+                                </div>
+                                <form class="user">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control"
+                                          aria-describedby="emailHelp" name="name"
+                                            placeholder="Name" [(ngModel)]="missions.name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user" name="period"
+                                            id="exampleInputPeriode" placeholder="Periode" [(ngModel)]="missions.period">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="date" class="form-control form-control-user" name="datedebut"
+                                            id="exampleInputPassword" placeholder="Password" [(ngModel)]="missions.datedebut">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="date" class="form-control form-control-user" name="datefin"
+                                            id="exampleInputPassword" placeholder="Password" [(ngModel)]="missions.datefin">
+                                    </div>
+                                    <div class="form-group">
+                                    <select multiple name="countries" [(ngModel)]="selectedEmployee" class="form-control form-control-user">
+                                        <option *ngFor="let emp of employees" [ngValue]="emp.id">
+                                          {{ emp.fullName}}
+                                        </option>
+                                      </select>
+                                        </div>
+                                       
+                                   
+                                    <button  class="btn btn-primary btn-user btn-block" (click)=" AjouterMission(missions)">
+                                      <i class="fas fa-check"></i> Save
+                                    </button>
+                                    <hr>
+                                   
+                                </form>
+                               
+                            
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

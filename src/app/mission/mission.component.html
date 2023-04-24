@@ -1,0 +1,32 @@
+<div class="container" id="main-container">
+
+    <button  class="btn btn-info" routerLink="/ajouteremployee" >Ajouter Mission</button>
+  
+         <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Name/th>
+                <th scope="col">Periode</th>
+                <th scope="col">Date_Debut</th>
+                <th scope="col">Date_Fin</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let miss of missions" class="col-md-6 col-xl-5">
+                <td>{{miss.id}}</td>
+                <td>{{miss.name}}</td>
+                <td>{{miss.period}}/td>
+                <td>{{miss.datedebut}}</td>
+                <td>{{miss.datefin}}</td> 
+                <td style="background-color:beige"> 
+  
+                  <div class="btn-group btn-group-sm">
+                    <a (click)="ModiferMission(miss.id)" class="btn btn-warning"><i style="color:white" class="bi bi-0-circle"></i></a>
+                    <a (click)="deleteData(miss.id)" class="btn btn-danger"><i style="color:white" class="bi bi-0-circle"></i></a>
+  
+                    <!--<a (click)="Deletedepartement(dep.id)" class="btn btn-danger"><i class="fas fa-trash"></i></a>!-->
+                  </div></td>
+              </tr></tbody></table></div>
+  
+  
